@@ -1,5 +1,7 @@
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
+import { AuthorDataSet } from './datasets/authors.dataset';
+import { BooksDataSet } from './datasets/books.dataset';
 
 @Module({
   imports: [
@@ -8,6 +10,9 @@ import { GraphQLModule } from '@nestjs/graphql';
     })
   ],
   controllers: [],
-  providers: [],
+  providers: [
+    AuthorDataSet,
+    BooksDataSet
+  ],
 })
 export class AppModule {}
