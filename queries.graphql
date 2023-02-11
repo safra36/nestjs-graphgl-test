@@ -1,0 +1,57 @@
+# query GetAuthors {
+#   authors {
+#     name,
+#     age,
+#     bookName
+#   }
+# }
+
+# mutation {
+#   createAuthor (createAuthor : {
+#     name : "jakesh",
+#     age : 2,
+#     bookName : "12345"
+#   }) {
+#     name,
+#     age,
+#     bookName
+#   }
+# }
+
+
+# Create a book and return authors name
+# mutation {
+#   createBook(createBook : {
+#     name : "The life of mamad 2",
+#     serial : 12,
+#     authorIds : [
+#       "mamad",
+#       "ozgal"
+#     ]
+#   }) {
+#     authors {name}
+#   }
+# }
+
+# Query book and fetch name of the author
+# query {
+#   book(name : "The life of mamad") {
+#     name,
+#     authors {name},
+#     serial
+#   }
+# }
+
+
+# mutation {
+#   updateBookSerial(updateBook : {
+#     name : "The life of mamad",
+#     serial : 13,
+#     authors : [
+#       "mamad",
+#       "ozgal"
+#     ]
+#   }) {
+#     authors {name}
+#   }
+# }

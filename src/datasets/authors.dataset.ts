@@ -47,6 +47,30 @@ export class AuthorDataSet {
 
     }
 
+
+    findAuthorsByNames(
+        names : string[]
+    ) : Author[] {
+
+        return this.authors.filter(authorObject => names.includes(authorObject.name))
+    }
+
+
+    findAll() : Author[] {
+        return this.authors;
+    }
+    
+
+    findAuthors(
+        name : string
+    ) : Author[] {
+
+        const authors = this.authors.filter(authorObject => authorObject.bookName == name);
+        return authors;
+
+    }
+
+
     deleteAuthor(
         name : string
     ) : void {

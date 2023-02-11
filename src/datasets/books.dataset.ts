@@ -61,13 +61,11 @@ export class BooksDataSet {
 
     updateBook(
         name: string,
-        authors: Author[],
-        serial: number
+        dto : Partial<Omit<Book, 'name'>>
     ): boolean {
 
         const book = this.findBook(name);
-        book.authors = authors;
-        book.serial = serial;
+        Object.assign(book, dto);
         return true;
 
     }
